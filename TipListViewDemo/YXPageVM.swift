@@ -19,7 +19,7 @@ enum DCPageState {
         if list?.count ?? 0 > 0 {
             return DCPageState.data(list)
         } else {
-            if image == self.defaultNoNetworkIcon() {
+            if image == self.defaultNoNetworkIcon() || image == defaultNeedAddIcon(){
                 return DCPageState.noData(msg, image, true)
             }
             return DCPageState.noData(msg, image, false)
@@ -27,7 +27,7 @@ enum DCPageState {
     }
     
     static func defaultDesc() -> String?{
-        return "暂无数据"
+        return "暂无记录"
     }
     
     static func defaultIcon() -> String?{
@@ -37,13 +37,16 @@ enum DCPageState {
     static func defaultNoNetworkIcon() -> String?{
         return "no_network"
     }
+    
+    static func defaultNeedAddIcon() -> String?{
+        return "nodata_folder"
+    }
 }
 
 class DCPageVM<TipCell, Cell, Model>: NSObject{
     
     var pageState: DCPageState = .normal
     var reloadBlock: (() -> Void)?
-    
 }
 // MARK: - tableView DataSource
 extension DCPageVM{
@@ -61,6 +64,7 @@ extension DCPageVM{
             return data?.count ?? 0
         }
     }
+    
     // MARK: - - - CellForRow
     /// 非分组tableView 调用
     ///  - 单一样式的cell
@@ -72,21 +76,24 @@ extension DCPageVM{
         return self.dcp_commonTableCell(tipConfig: { (msg, image, isReload) -> UITableViewCell in
             if tipConfig == nil{
                 let cell = tableView.dequeueReusableCell(withIdentifier: tipCellIdentify) as! YXTipTableViewCell
-                cell.imageSize = CGSize(width: 145, height: 126)
+                cell.imageSize = CGSize(width: 74, height: 74)
                 cell.imageTopSapce = 158
+                cell.isShowButton = false
                 if isReload ?? false {
                     cell.isShowButton = true
-                    cell.btnBackground = .color(UIColor.clear)
-                    cell.btnTitleFontSize = 12
+                    let bgColor = UIColor.theme
+                    cell.btnBackground = .color(bgColor.withAlphaComponent(0.1))
+                    cell.btnTitleFontSize = 14
                     cell.buttonTop = 20
-                    cell.btnTitleColor = UIColor.init(hexColor: "#2DA1DB")
+                    cell.btnTitleColor = UIColor.blue
                     cell.buttonAction = reloadBlock
                 }
-                cell.config = YXTipCellConfig(image: image ?? "search_no_data", desc: msg, buttonTitle: isReload == true ? "重试" : nil)
+                cell.backgroundColor = UIColor.clear
+                cell.config = YXTipCellConfig(image: image ?? "no_data", desc: msg, buttonTitle: isReload == true ? "刷新" : nil)
                 return cell
             } else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: tipCellIdentify) as! TipCell
-                let config = YXTipCellConfig(image: image ?? "search_no_data", desc: msg)
+                let config = YXTipCellConfig(image: image ?? "no_data", desc: msg)
                 return tipConfig!(cell, config, isReload)
             }
         }, config: { (list) -> UITableViewCell in
@@ -172,8 +179,7 @@ extension DCPageVM{
 
 extension DCPageVM{
     // MARK: - - group
-    /// 获取组数, 分组tableView 调用
-    func dcp_groupTableNumberOfSections() -> Int{
+    func dcp_commonTableNumberOfSections() -> Int{
         switch pageState {
         case .normal:
             return 0
@@ -182,6 +188,11 @@ extension DCPageVM{
         case .data(let data):
             return data?.count ?? 0
         }
+    }
+    
+    /// 获取组数, 分组tableView 调用
+    func dcp_groupTableNumberOfSections() -> Int{
+        return dcp_commonTableNumberOfSections()
     }
     /// 获取行数, 分组tableView 调用
     func dcp_groupTableNumberOfRows(section: Int, config: ((_ data: Any?) -> Int)? = nil) -> Int{
@@ -316,6 +327,29 @@ extension DCPageVM{
         self.dcp_commonTableDidCommit(editingStyle: editingStyle) { (editingStyle, list) in
             let arr = list as? [Model]
             config(editingStyle, arr?[indexPath.row])
+        }
+    }
+    
+    func dcp_commonTableMoveRowAt(fromIndexPath: IndexPath, to: IndexPath, config:((_ fromIndexPath: IndexPath, _ to: IndexPath, _ list: [Model]?) -> Void)?) {
+        switch pageState {
+        case .data(let list):
+            config?(fromIndexPath, to, list as? [Model])
+        default:
+            break
+        }
+        
+    }
+    
+    // Override to support conditional rearranging of the table view.
+    func dcp_commonTableCanMoveRowAt(indexPath: IndexPath, config:((_ list: [Model]?) -> Bool)? = nil) -> Bool {
+        switch pageState {
+        case .data(let list):
+            if config == nil {
+                return true
+            }
+            return config!(list as? [Model])
+        default:
+            return false
         }
     }
     

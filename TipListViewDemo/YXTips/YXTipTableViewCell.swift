@@ -127,12 +127,12 @@ class YXTipTableViewCell: UITableViewCell {
         }
         
         var style: YXEmptyStyle
-        if desc.count > 0 && title.length > 0{
+        if desc.count > 0 && title.count > 0{
             let descConfig = self.descConfig(desc)
             style = .descStyle(titleConfig, descConfig, imageConfig, buttonConfig)
         } else {
             var descConfig = self.titleConfig(title)
-            if title.length == 0{
+            if title.count == 0{
                 descConfig = self.descConfig(desc)
             }
             style = .normal(descConfig, imageConfig, buttonConfig)

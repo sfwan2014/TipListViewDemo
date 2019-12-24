@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 extension YXLabelConfig{
     static func defaultTitleConfig(text: String, top: CGFloat = 30) -> YXLabelConfig{
         let edge = UIEdgeInsets.init(top: top, left: 16, bottom: 0, right: 16)
@@ -36,12 +36,12 @@ extension YXEmptyStyle{
         let titleConfig = YXLabelConfig.defaultTitleConfig(text: title)
         let imageConfig = YXImageConfig.defaultEmptyConfig(imageName: imageName)
         var style: YXEmptyStyle
-        if desc.count > 0 && title.length > 0{
+        if desc.count > 0 && title.count > 0{
             let descConfig = YXLabelConfig.defaultDescConfig(text: desc)
             style = .descStyle(titleConfig, descConfig, imageConfig, nil)
         } else {
             var descConfig = YXLabelConfig.defaultDescConfig(text: title)
-            if title.length == 0{
+            if title.count == 0{
                 descConfig = YXLabelConfig.defaultDescConfig(text: desc)
             }
             style = .normal(descConfig, imageConfig, nil)

@@ -15,7 +15,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.origin.x = left
+            frame.origin.x = newValue
             self.frame = frame
         }
     }
@@ -26,7 +26,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.origin.x = right - frame.width
+            frame.origin.x = newValue - frame.width
             self.frame = frame
         }
     }
@@ -37,7 +37,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.origin.y = top
+            frame.origin.y = newValue
             self.frame = frame
         }
     }
@@ -48,7 +48,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.origin.y = bottom - frame.height
+            frame.origin.y = newValue - frame.height
             self.frame = frame
         }
     }
@@ -59,7 +59,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.size.width = width
+            frame.size.width = newValue
             self.frame = frame
         }
     }
@@ -70,7 +70,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.size.height = height
+            frame.size.height = newValue
             self.frame = frame
         }
     }
@@ -80,7 +80,7 @@ extension UIView {
             return self.center.x
         }
         set {
-            self.center = CGPoint(x: centerX, y: self.center.y)
+            self.center = CGPoint(x: newValue, y: self.center.y)
         }
     }
     
@@ -89,7 +89,7 @@ extension UIView {
             return self.center.y
         }
         set {
-            self.center = CGPoint(x: self.center.x, y: centerY)
+            self.center = CGPoint(x: self.center.x, y: newValue)
         }
     }
     
@@ -99,7 +99,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.origin = mj_origin
+            frame.origin = newValue
             self.frame = frame
         }
     }
@@ -110,7 +110,7 @@ extension UIView {
         }
         set {
             var frame = self.frame
-            frame.size = size
+            frame.size = newValue
             self.frame = frame
         }
     }

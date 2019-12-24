@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E72CF9D23501C0F00D64097 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72CF9C23501C0F00D64097 /* DetailViewController.swift */; };
+		8E72CFA42350604E00D64097 /* GMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72CFA32350604E00D64097 /* GMarketView.swift */; };
+		8E72CFA62350606100D64097 /* GMarketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E72CFA52350606100D64097 /* GMarketView.xib */; };
 		8ECA0393234F37F100E27EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA0392234F37F100E27EB1 /* AppDelegate.swift */; };
 		8ECA0395234F37F100E27EB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA0394234F37F100E27EB1 /* SceneDelegate.swift */; };
 		8ECA0397234F37F100E27EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA0396234F37F100E27EB1 /* ViewController.swift */; };
@@ -15,6 +18,14 @@
 		8ECA039F234F37F200E27EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECA039D234F37F200E27EB1 /* LaunchScreen.storyboard */; };
 		8ECA03AA234F37F200E27EB1 /* TipListViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03A9234F37F200E27EB1 /* TipListViewDemoTests.swift */; };
 		8ECA03B5234F37F200E27EB1 /* TipListViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03B4234F37F200E27EB1 /* TipListViewDemoUITests.swift */; };
+		8ECA03C3234F394400E27EB1 /* YXPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03C2234F394400E27EB1 /* YXPageVM.swift */; };
+		8ECA03CA234F39FD00E27EB1 /* YXTipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03C5234F39FD00E27EB1 /* YXTipTableViewCell.swift */; };
+		8ECA03CB234F39FD00E27EB1 /* Extension-YXTipConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03C6234F39FD00E27EB1 /* Extension-YXTipConfig.swift */; };
+		8ECA03CC234F39FD00E27EB1 /* YXTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03C7234F39FD00E27EB1 /* YXTipView.swift */; };
+		8ECA03CD234F39FD00E27EB1 /* YXTipConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03C8234F39FD00E27EB1 /* YXTipConfig.swift */; };
+		8ECA03CE234F39FD00E27EB1 /* YXTipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03C9234F39FD00E27EB1 /* YXTipCollectionViewCell.swift */; };
+		8ECA03D0234F3A8600E27EB1 /* Extension-Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03CF234F3A8600E27EB1 /* Extension-Color.swift */; };
+		8ECA03D2234F3BD400E27EB1 /* Extension-XView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA03D1234F3BD400E27EB1 /* Extension-XView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E72CF9C23501C0F00D64097 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8E72CFA32350604E00D64097 /* GMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMarketView.swift; sourceTree = "<group>"; };
+		8E72CFA52350606100D64097 /* GMarketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMarketView.xib; sourceTree = "<group>"; };
 		8ECA038F234F37F100E27EB1 /* TipListViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipListViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECA0392234F37F100E27EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECA0394234F37F100E27EB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +63,14 @@
 		8ECA03B0234F37F200E27EB1 /* TipListViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipListViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECA03B4234F37F200E27EB1 /* TipListViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipListViewDemoUITests.swift; sourceTree = "<group>"; };
 		8ECA03B6234F37F200E27EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ECA03C2234F394400E27EB1 /* YXPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXPageVM.swift; sourceTree = "<group>"; };
+		8ECA03C5234F39FD00E27EB1 /* YXTipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXTipTableViewCell.swift; sourceTree = "<group>"; };
+		8ECA03C6234F39FD00E27EB1 /* Extension-YXTipConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-YXTipConfig.swift"; sourceTree = "<group>"; };
+		8ECA03C7234F39FD00E27EB1 /* YXTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXTipView.swift; sourceTree = "<group>"; };
+		8ECA03C8234F39FD00E27EB1 /* YXTipConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXTipConfig.swift; sourceTree = "<group>"; };
+		8ECA03C9234F39FD00E27EB1 /* YXTipCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXTipCollectionViewCell.swift; sourceTree = "<group>"; };
+		8ECA03CF234F3A8600E27EB1 /* Extension-Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-Color.swift"; sourceTree = "<group>"; };
+		8ECA03D1234F3BD400E27EB1 /* Extension-XView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-XView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +124,14 @@
 				8ECA0392234F37F100E27EB1 /* AppDelegate.swift */,
 				8ECA0394234F37F100E27EB1 /* SceneDelegate.swift */,
 				8ECA0396234F37F100E27EB1 /* ViewController.swift */,
+				8E72CF9C23501C0F00D64097 /* DetailViewController.swift */,
+				8E72CFA32350604E00D64097 /* GMarketView.swift */,
+				8E72CFA52350606100D64097 /* GMarketView.xib */,
 				8ECA0398234F37F100E27EB1 /* Main.storyboard */,
+				8ECA03D1234F3BD400E27EB1 /* Extension-XView.swift */,
+				8ECA03CF234F3A8600E27EB1 /* Extension-Color.swift */,
+				8ECA03C4234F39FD00E27EB1 /* YXTips */,
+				8ECA03C2234F394400E27EB1 /* YXPageVM.swift */,
 				8ECA039B234F37F200E27EB1 /* Assets.xcassets */,
 				8ECA039D234F37F200E27EB1 /* LaunchScreen.storyboard */,
 				8ECA03A0234F37F200E27EB1 /* Info.plist */,
@@ -126,6 +155,18 @@
 				8ECA03B6234F37F200E27EB1 /* Info.plist */,
 			);
 			path = TipListViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		8ECA03C4234F39FD00E27EB1 /* YXTips */ = {
+			isa = PBXGroup;
+			children = (
+				8ECA03C5234F39FD00E27EB1 /* YXTipTableViewCell.swift */,
+				8ECA03C6234F39FD00E27EB1 /* Extension-YXTipConfig.swift */,
+				8ECA03C7234F39FD00E27EB1 /* YXTipView.swift */,
+				8ECA03C8234F39FD00E27EB1 /* YXTipConfig.swift */,
+				8ECA03C9234F39FD00E27EB1 /* YXTipCollectionViewCell.swift */,
+			);
+			path = YXTips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +275,7 @@
 			files = (
 				8ECA039F234F37F200E27EB1 /* LaunchScreen.storyboard in Resources */,
 				8ECA039C234F37F200E27EB1 /* Assets.xcassets in Resources */,
+				8E72CFA62350606100D64097 /* GMarketView.xib in Resources */,
 				8ECA039A234F37F100E27EB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +301,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ECA03CD234F39FD00E27EB1 /* YXTipConfig.swift in Sources */,
+				8E72CFA42350604E00D64097 /* GMarketView.swift in Sources */,
+				8ECA03D0234F3A8600E27EB1 /* Extension-Color.swift in Sources */,
+				8ECA03C3234F394400E27EB1 /* YXPageVM.swift in Sources */,
+				8E72CF9D23501C0F00D64097 /* DetailViewController.swift in Sources */,
 				8ECA0397234F37F100E27EB1 /* ViewController.swift in Sources */,
+				8ECA03CB234F39FD00E27EB1 /* Extension-YXTipConfig.swift in Sources */,
+				8ECA03D2234F3BD400E27EB1 /* Extension-XView.swift in Sources */,
 				8ECA0393234F37F100E27EB1 /* AppDelegate.swift in Sources */,
+				8ECA03CC234F39FD00E27EB1 /* YXTipView.swift in Sources */,
+				8ECA03CA234F39FD00E27EB1 /* YXTipTableViewCell.swift in Sources */,
+				8ECA03CE234F39FD00E27EB1 /* YXTipCollectionViewCell.swift in Sources */,
 				8ECA0395234F37F100E27EB1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
